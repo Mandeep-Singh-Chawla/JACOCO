@@ -13,7 +13,7 @@ b) **Start the Server with JaCoCo Agent:**
 
 1) Use this command to start your application with the JaCoCo agent:
 ***Java -javaagent:lib/jacocoagent.jar=address=*,port=36320,destfile=jacoco-it.exec,output=tcpserver /path/to/your-web-app.war(.jar)**
-2) Replace /path/to/jacocoagent.jar with the actual path of JaCoCo agent JAR.
+2) Replace lib/jacocoagent.jar with the actual path of JaCoCo agent JAR.
 3) Replace /path/to/your-web-app.war(.jar) with the path of your Application file.
 4) This command starts your web application with the JaCoCo agent and specifies the destination file (destfile=jacoco-it.exec) where JaCoCo will store the coverage data.
 
@@ -30,7 +30,7 @@ Once the server is running, run Automation scripts on the same test env where ab
 d) **Dump Coverage Data:**
 
 1) Use this JaCoCo command to dump the coverage data:
-**java -jar /path/to/jacococli.jar dump --address localhost --port 36320 --destfile jacoco-server.exec**
+**java -jar /path/to/jacococli.jar dump --address localhost --port 36320 --destfile jacoco-it.exec**
 2) Replace /path/to/jacococli.jar with the actual path of JaCoCo CLI JAR.
 3) Adjust --address and --port if you have configured the JaCoCo agent with a different address and port.
 
@@ -40,10 +40,10 @@ d) **Dump Coverage Data:**
 e) **Generate Reports:**
 
 1) Use this JaCoCo command to generate HTML reports:
-**java -jar /path/to/jacococli.jar report jacoco-server.exec --classfiles /path/to/your/classes --sourcefiles /path/to/your/source --html report**
+**java -jar /path/to/jacococli.jar report jacoco-it.exec --classfiles /path/to/your/classes --sourcefiles /path/to/your/source --html report**
 2) Replace /path/to/jacococli.jar with the actual path of JaCoCo CLI JAR.
-3) Replace /path/to/your/classes with the path of your compiled Application classes(till /classes/com).
-4) Replace /path/to/your/source with the path of your source Application code(till /src/main/java).
+3) Replace /path/to/your/classes with the path of your compiled Application classes(target/classes/com).
+4) Replace /path/to/your/source with the path of your source Application source code(src/main/java).
 
 
 
