@@ -1,5 +1,6 @@
 **Steps to find Automation code coverage using JACOCO
 **
+
 Prerequisite:
 
 Login to Application server with sudo user
