@@ -51,6 +51,6 @@ e) **Generate Reports:**
 f) **Open html report**
 
 1) Copy report folder to local
-2) Click on index.html inside report folder
+2) Open index.html inside report folder
 
 
