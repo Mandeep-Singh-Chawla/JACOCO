@@ -2,9 +2,9 @@
 
 a) **Prerequisite**:
 
-a) Login to Application server with sudo user
-b) Create a directory for Jacoco
-c) Download jacocoagent.jar and jacococli.jar from https://www.jacoco.org/jacoco/
+1) Login to Application server with sudo user
+2) Create a directory for Jacoco
+3) Download jacocoagent.jar and jacococli.jar from https://www.jacoco.org/jacoco/
 
 
 
