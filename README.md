@@ -1,45 +1,50 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+**Steps to find Automation code coverage using JACOCO
+**
+Prerequisite:
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Login to Application server with sudo user
+Create a directory for Jacoco
+Download or copy jacocoagent.jar and jacococli.jar
+https://www.jacoco.org/jacoco/
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
 
----
+Start the Server with JaCoCo Agent:
 
-## Edit a file
+You can use a command like the following to start your application with the JaCoCo agent:
+Java -javaagent:lib/jacocoagent.jar=address=*,port=36320,destfile=jacoco-it.exec,output=tcpserver /path/to/your-web-app.war(.jar)
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+Replace /path/to/jacocoagent.jar with the actual path to the JaCoCo agent JAR.
+Replace /path/to/your-web-app.war(.jar) with the path of your application file.
+This command starts your web application with the JaCoCo agent and specifies the destination file (destfile=jacoco-it.exec) where JaCoCo will store the coverage data.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
 
----
+Perform Actions on the Web Application:
+Once the server is running, perform actions(run automation scripts) on your application to exercise the code you want to cover.
 
-## Create a file
 
-Next, you’ll add a new file to this repository.
+Dump Coverage Data (Optional):
+If you want to collect the coverage data while the server is still running, you can use the JaCoCo CLI to dump the coverage data:
+java -jar /path/to/jacococli.jar dump --address localhost --port 36320 --destfile jacoco-server.exec
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+Replace /path/to/jacococli.jar with the actual path to the JaCoCo CLI JAR.
+Adjust --address and --port if you have configured the JaCoCo agent with a different address and port.
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
 
----
 
-## Clone a repository
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+Generate Reports (Optional):
+After collecting the coverage data, you can use the JaCoCo CLI or other tools to generate reports:
+java -jar /path/to/jacococli.jar report jacoco-server.exec --classfiles /path/to/your/classes --sourcefiles /path/to/your/source --html report
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+Replace /path/to/jacococli.jar with the actual path to the JaCoCo CLI JAR.
+Replace /path/to/your/classes with the path to your compiled classes(till /classes/com).
+Replace /path/to/your/source with the path to your source code(till /src/main/java).
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+
+
+Open html report
+
+Copy report folder to local
+Click on index.html inside report folder
+
+
