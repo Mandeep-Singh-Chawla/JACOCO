@@ -1,4 +1,4 @@
-**Steps to find Automation code coverage using JACOCO**
+**Steps to find Automation code coverage using JaCoCo**
 
 **Prerequisite**:
 
@@ -19,10 +19,12 @@ This command starts your web application with the JaCoCo agent and specifies the
 
 
 **Perform Actions on the Web Application:**
+
 Once the server is running, perform actions(run automation scripts) on your application to exercise the code you want to cover.
 
 
 **Dump Coverage Data (Optional):**
+
 If you want to collect the coverage data while the server is still running, you can use the JaCoCo CLI to dump the coverage data:
 java -jar /path/to/jacococli.jar dump --address localhost --port 36320 --destfile jacoco-server.exec
 
@@ -30,6 +32,7 @@ Replace /path/to/jacococli.jar with the actual path to the JaCoCo CLI JAR.
 Adjust --address and --port if you have configured the JaCoCo agent with a different address and port.
 
 **Generate Reports (Optional):**
+
 After collecting the coverage data, you can use the JaCoCo CLI or other tools to generate reports:
 java -jar /path/to/jacococli.jar report jacoco-server.exec --classfiles /path/to/your/classes --sourcefiles /path/to/your/source --html report
 
