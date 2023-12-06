@@ -22,7 +22,7 @@ b) **Start the Server with JaCoCo Agent:**
 
 c) **Perform Actions on the Web Application:**
 
-Once the server is running, perform actions(run automation scripts) on your application to exercise the code you want to cover.
+Once the server is running, run Automation scripts on the same test env where above setup is done.
 
 
 
