@@ -9,7 +9,7 @@ Download or copy jacocoagent.jar and jacococli.jar from https://www.jacoco.org/j
 
 **Start the Server with JaCoCo Agent:**
 
-You can use a command like the following to start your application with the JaCoCo agent:
+Use below command to start your application with the JaCoCo agent:
 ***Java -javaagent:lib/jacocoagent.jar=address=*,port=36320,destfile=jacoco-it.exec,output=tcpserver /path/to/your-web-app.war(.jar)**
 Replace /path/to/jacocoagent.jar with the actual path to the JaCoCo agent JAR.
 Replace /path/to/your-web-app.war(.jar) with the path of your application file.
