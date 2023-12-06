@@ -7,6 +7,7 @@ a) **Prerequisite**:
 3) Download jacocoagent.jar and jacococli.jar from https://www.jacoco.org/jacoco/
 
 
+
 b) **Start the Server with JaCoCo Agent:**
 
 1) Use this command to start your application with the JaCoCo agent:
@@ -16,9 +17,11 @@ b) **Start the Server with JaCoCo Agent:**
 4) This command starts your web application with the JaCoCo agent and specifies the destination file (destfile=jacoco-it.exec) where JaCoCo will store the coverage data.
 
 
+
 c) **Perform Actions on the Web Application:**
 
 Once the server is running, perform actions(run automation scripts) on your application to exercise the code you want to cover.
+
 
 
 d) **Dump Coverage Data:**
@@ -29,6 +32,7 @@ d) **Dump Coverage Data:**
 3) Adjust --address and --port if you have configured the JaCoCo agent with a different address and port.
 
 
+
 e) **Generate Reports:**
 
 1) Use this JaCoCo command to generate HTML reports:
@@ -36,6 +40,8 @@ e) **Generate Reports:**
 2) Replace /path/to/jacococli.jar with the actual path of JaCoCo CLI JAR.
 3) Replace /path/to/your/classes with the path of your compiled Application classes(till /classes/com).
 4) Replace /path/to/your/source with the path of your source Application code(till /src/main/java).
+
+
 
 f) **Open html report**
 
