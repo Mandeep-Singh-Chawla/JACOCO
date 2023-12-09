@@ -1,4 +1,5 @@
 Soure code shared is sample project to practice JaCoCo . Run start.sh to create report
+
 To implement JaCoCo in your project, please follow below steps
 
 **Steps to find Automation code coverage using JaCoCo**
